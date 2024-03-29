@@ -1,0 +1,22 @@
+def calculate_tip(bill_amount, service_quality, number_of_people):
+    """
+    This function calculates the tip per person based on the provided parameters.
+    """
+    # Calculate the tip
+    tip_per_person = (bill_amount * (service_quality / 100)) / number_of_people
+    return tip_per_person
+
+if __name__ == "__main__":
+    # Test cases
+    test_cases = [
+        {"bill_amount": 500, "service_quality": 5, "number_of_people": 2},
+        {"bill_amount": 1000, "service_quality": 3, "number_of_people": 5}
+    ]
+
+    # Calculate and print tips for each test case
+    for test_case in test_cases:
+        bill_amount = test_case["bill_amount"]
+        service_quality = test_case["service_quality"]
+        number_of_people = test_case["number_of_people"]
+        tip = calculate_tip(bill_amount, service_quality, number_of_people)
+        print(f"Bill: ${bill_amount}, Service Quality: {service_quality}, Number of People: {number_of_people}, Tip: ${tip:.2f}")
